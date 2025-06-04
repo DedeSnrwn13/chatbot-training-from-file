@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Smalot\PdfParser\Parser;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Inertia\Inertia;
 
 class ChatbotController extends Controller
 {
@@ -73,11 +74,7 @@ class ChatbotController extends Controller
                 'successful_embeddings' => $successCount
             ]);
 
-            return response()->json([
-                'message' => 'Training completed successfully',
-                'file' => $fileName,
-                'chunks_processed' => $successCount
-            ]);
+            return back()->with('success', 'Training completed successfully');
 
         } catch (\Exception $e) {
             DB::rollback();
@@ -86,10 +83,13 @@ class ChatbotController extends Controller
                 'trace' => $e->getTraceAsString()
             ]);
 
-            return response()->json([
-                'message' => 'Error during training: ' . $e->getMessage()
-            ], 500);
+            return back()->with('error', 'Error during training: ' . $e->getMessage());
         }
+    }
+
+    public function index()
+    {
+        return Inertia::render('Chat');
     }
 
     public function chat(Request $request)
@@ -100,15 +100,17 @@ class ChatbotController extends Controller
             ]);
 
             $prompt = $request->input('prompt');
+            Log::info('Chat request received:', ['prompt' => $prompt]);
+
             $promptEmbedding = $this->geminiService->createEmbedding($prompt);
 
             if (empty($promptEmbedding)) {
                 Log::error('Empty embedding received for prompt', [
                     'prompt' => $prompt
                 ]);
-                return response()->json([
+                return back()->with([
                     'response' => 'Maaf, saya tidak bisa memproses permintaan Anda saat ini.'
-                ], 500);
+                ]);
             }
 
             Log::info('Searching similar documents', [
@@ -118,13 +120,18 @@ class ChatbotController extends Controller
             $similarDocs = $this->geminiService->findSimilarDocuments($promptEmbedding);
 
             Log::info('Similar documents found', [
-                'count' => count($similarDocs)
+                'count' => count($similarDocs),
+                'docs' => $similarDocs
             ]);
 
             $context = array_map(fn($doc) => $doc->text, $similarDocs);
             $response = $this->geminiService->generateResponse($prompt, $context);
 
-            return response()->json([
+            Log::info('Generated response:', [
+                'response' => $response
+            ]);
+
+            return back()->with([
                 'response' => $response
             ]);
 
@@ -134,9 +141,9 @@ class ChatbotController extends Controller
                 'trace' => $e->getTraceAsString()
             ]);
 
-            return response()->json([
+            return back()->with([
                 'response' => 'Maaf, terjadi kesalahan saat memproses permintaan Anda.'
-            ], 500);
+            ]);
         }
     }
 
