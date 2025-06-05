@@ -8,14 +8,8 @@ Route::get('/', function () {
     return redirect('/chat');
 });
 
-Route::get('/upload', function () {
-    return Inertia::render('Upload');
-})->name('upload');
-
-Route::get('/chat', function () {
-    return Inertia::render('Chat');
-})->name('chat');
-
+Route::get('/upload', [ChatbotController::class, 'upload']);
+Route::get('/chat', [ChatbotController::class, 'index']);
 Route::post('/train', [ChatbotController::class, 'train']);
 Route::post('/chat', [ChatbotController::class, 'chat']);
 

@@ -1,16 +1,29 @@
 import { useState, useRef, useEffect } from 'react';
-import { Button, Card, TextInput, Spinner } from 'flowbite-react';
+import { Button, Card, TextInput, Spinner, Select } from 'flowbite-react'; // Import Select
 import { useForm, usePage } from '@inertiajs/react';
 import AppLayout from '@/Layouts/AppLayout';
 
-export default function Chat() {
+export default function Chat({ availableLlmProviders }) {
     const [messages, setMessages] = useState([]);
     const chatContainerRef = useRef(null);
-    const { flash } = usePage().props;
+    const { flash } = usePage().props; // Dapatkan availableLlmProviders
+
+    const [selectedProvider, setSelectedProvider] = useState(
+        availableLlmProviders && availableLlmProviders.length > 0
+            ? availableLlmProviders[0].id // Default ke provider pertama
+            : ''
+    );
 
     const { data, setData, post, processing, reset } = useForm({
-        prompt: ''
+        prompt: '',
+        llm_provider: selectedProvider // Tambahkan llm_provider ke data form
     });
+
+    // Update form data when selectedProvider changes
+    useEffect(() => {
+        setData('llm_provider', selectedProvider);
+    }, [selectedProvider, setData]);
+
 
     useEffect(() => {
         if (chatContainerRef.current) {
@@ -33,7 +46,7 @@ export default function Chat() {
         e.preventDefault();
         if (!data.prompt.trim() || processing) return;
 
-        console.log('Sending prompt:', data.prompt);
+        console.log('Sending prompt:', data.prompt, 'with provider:', data.llm_provider);
         // Add user message immediately
         setMessages(prev => [...prev, { role: 'user', content: data.prompt }]);
 
@@ -93,6 +106,20 @@ export default function Chat() {
                                 className="flex-1"
                                 disabled={processing}
                             />
+                            {availableLlmProviders && availableLlmProviders.length > 0 && (
+                                <Select
+                                    value={selectedProvider}
+                                    onChange={(e) => setSelectedProvider(e.target.value)}
+                                    className="w-auto" // Atur lebar sesuai kebutuhan
+                                    disabled={processing}
+                                >
+                                    {availableLlmProviders.map((provider) => (
+                                        <option key={provider.id} value={provider.id}>
+                                            {provider.name}
+                                        </option>
+                                    ))}
+                                </Select>
+                            )}
                             <Button type="submit" disabled={processing || !data.prompt.trim()}>
                                 Kirim
                             </Button>

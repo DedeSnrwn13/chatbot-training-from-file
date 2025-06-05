@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3268e8bdf2498e6d3064a515189a2834",
+    "content-hash": "3bd48c66a2725e53032c7be028d4db7b",
     "packages": [
         {
             "name": "brick/math",
@@ -134,6 +134,176 @@
                 }
             ],
             "time": "2024-02-09T16:56:22+00:00"
+        },
+        {
+            "name": "codewithkyrian/jinja-php",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodeWithKyrian/jinja-php.git",
+                "reference": "3a246c831af5c3c3c532399aa0c1e5209441675f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodeWithKyrian/jinja-php/zipball/3a246c831af5c3c3c532399aa0c1e5209441675f",
+                "reference": "3a246c831af5c3c3c532399aa0c1e5209441675f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.34",
+                "symfony/var-dumper": "^6.3|^7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Core/Utils.php"
+                ],
+                "psr-4": {
+                    "Codewithkyrian\\Jinja\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyrian Obikwelu",
+                    "email": "koshnawaza@gmail.com"
+                }
+            ],
+            "description": "A minimalistic PHP implementation of the Jinja templating engine, specifically designed for parsing and rendering ML chat templates.",
+            "support": {
+                "issues": "https://github.com/CodeWithKyrian/jinja-php/issues",
+                "source": "https://github.com/CodeWithKyrian/jinja-php/tree/1.0.0"
+            },
+            "time": "2024-03-19T17:43:20+00:00"
+        },
+        {
+            "name": "codewithkyrian/transformers",
+            "version": "0.5.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodeWithKyrian/transformers-php.git",
+                "reference": "474406c25d33e36fcc4f6225719a46afa82acbf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodeWithKyrian/transformers-php/zipball/474406c25d33e36fcc4f6225719a46afa82acbf8",
+                "reference": "474406c25d33e36fcc4f6225719a46afa82acbf8",
+                "shasum": ""
+            },
+            "require": {
+                "codewithkyrian/jinja-php": "^1.0",
+                "codewithkyrian/transformers-libsloader": "^2.0",
+                "ext-ffi": "*",
+                "imagine/imagine": "^1.3",
+                "php": "^8.1",
+                "rindow/rindow-math-matrix": "^2.0",
+                "rindow/rindow-matlib-ffi": "^1.0",
+                "rindow/rindow-openblas-ffi": "^1.0",
+                "rokka/imagine-vips": "^0.31.0",
+                "symfony/console": "^6.4|^7.0"
+            },
+            "require-dev": {
+                "pestphp/pest": "^2.31",
+                "symfony/var-dumper": "^7.0"
+            },
+            "suggest": {
+                "ext-gd": "Required to use the GD Driver for image processing",
+                "ext-imagick": "Required to use the Imagick Driver for image processing",
+                "rokka/imagine-vips": "Required to use the VIPS Driver for image processing"
+            },
+            "bin": [
+                "bin/transformers"
+            ],
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/Pipelines/Pipeline.php",
+                    "src/Utils/Helpers.php"
+                ],
+                "psr-4": {
+                    "Codewithkyrian\\Transformers\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Kyrian Obikwelu",
+                    "email": "koshnawaza@gmail.com"
+                }
+            ],
+            "description": "State-of-the-art Machine Learning for PHP. Run Transformers in PHP",
+            "keywords": [
+                "CodeWithKyrian",
+                "ai",
+                "machine learning",
+                "natural language processing",
+                "nlp",
+                "php",
+                "transformers",
+                "transformers-php"
+            ],
+            "support": {
+                "issues": "https://github.com/CodeWithKyrian/transformers-php/issues",
+                "source": "https://github.com/CodeWithKyrian/transformers-php/tree/0.5.3"
+            },
+            "time": "2024-09-27T19:39:27+00:00"
+        },
+        {
+            "name": "codewithkyrian/transformers-libsloader",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/CodeWithKyrian/transformers-libsloader.git",
+                "reference": "7052adad23e969701a961437b77422f820df05ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/CodeWithKyrian/transformers-libsloader/zipball/7052adad23e969701a961437b77422f820df05ba",
+                "reference": "7052adad23e969701a961437b77422f820df05ba",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1 || ^2.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "composer/composer": "~1.0 || ~2.0",
+                "symfony/var-dumper": "^6.0|^7.0"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Codewithkyrian\\TransformersLibsLoader\\Plugin"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Codewithkyrian\\TransformersLibsLoader\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Kyrian Obikwelu",
+                    "email": "koshnawaza@gmail.com"
+                }
+            ],
+            "description": "Composer plugin to download all shared libraries necessary for TransformersPHP",
+            "support": {
+                "issues": "https://github.com/CodeWithKyrian/transformers-libsloader/issues",
+                "source": "https://github.com/CodeWithKyrian/transformers-libsloader/tree/2.0.0"
+            },
+            "time": "2024-08-18T16:40:39+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1055,6 +1225,68 @@
             "time": "2025-02-03T10:55:03+00:00"
         },
         {
+            "name": "imagine/imagine",
+            "version": "1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-imagine/Imagine.git",
+                "reference": "80ab21434890dee9ba54969d31c51ac8d4d551e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-imagine/Imagine/zipball/80ab21434890dee9ba54969d31c51ac8d4d551e0",
+                "reference": "80ab21434890dee9ba54969d31c51ac8d4d551e0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.5 || ^8.4 || ^9.3"
+            },
+            "suggest": {
+                "ext-exif": "to read EXIF metadata",
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Imagine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "support": {
+                "issues": "https://github.com/php-imagine/Imagine/issues",
+                "source": "https://github.com/php-imagine/Imagine/tree/1.5.0"
+            },
+            "time": "2024-12-03T14:37:55+00:00"
+        },
+        {
             "name": "inertiajs/inertia-laravel",
             "version": "v2.0.2",
             "source": {
@@ -1121,6 +1353,106 @@
                 "source": "https://github.com/inertiajs/inertia-laravel/tree/v2.0.2"
             },
             "time": "2025-04-10T15:08:36+00:00"
+        },
+        {
+            "name": "interop-phpobjects/polite-math",
+            "version": "1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/interop-phpobjects/polite-math.git",
+                "reference": "621246cdc108b1388307097e06361ca5b9259467"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/interop-phpobjects/polite-math/zipball/621246cdc108b1388307097e06361ca5b9259467",
+                "reference": "621246cdc108b1388307097e06361ca5b9259467",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Polite\\Math\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Interoperability of interfaces around the Math",
+            "keywords": [
+                "interop",
+                "interoperability",
+                "math"
+            ],
+            "support": {
+                "issues": "https://github.com/interop-phpobjects/polite-math/issues",
+                "source": "https://github.com/interop-phpobjects/polite-math/tree/1.0.7"
+            },
+            "time": "2024-04-07T07:10:27+00:00"
+        },
+        {
+            "name": "jcupitt/vips",
+            "version": "v2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/libvips/php-vips.git",
+                "reference": "a54c1cceea581b592a199edd61a7c06f44a24c08"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/libvips/php-vips/zipball/a54c1cceea581b592a199edd61a7c06f44a24c08",
+                "reference": "a54c1cceea581b592a199edd61a7c06f44a24c08",
+                "shasum": ""
+            },
+            "require": {
+                "ext-ffi": "*",
+                "php": ">=7.4",
+                "psr/log": "^1.1.3|^2.0|^3.0"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.3",
+                "phpdocumentor/shim": "^3.3",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Jcupitt\\Vips\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "John Cupitt",
+                    "email": "jcupitt@gmail.com",
+                    "homepage": "https://github.com/jcupitt",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A high-level interface to the libvips image processing library.",
+            "homepage": "https://github.com/libvips/php-vips",
+            "keywords": [
+                "image",
+                "libvips",
+                "processing"
+            ],
+            "support": {
+                "issues": "https://github.com/libvips/php-vips/issues",
+                "source": "https://github.com/libvips/php-vips/tree/v2.5.0"
+            },
+            "time": "2025-04-04T17:10:13+00:00"
         },
         {
             "name": "laravel/framework",
@@ -2577,6 +2909,50 @@
             "time": "2025-05-08T08:14:37+00:00"
         },
         {
+            "name": "phenx/php-font-lib",
+            "version": "0.5.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/dompdf/php-font-lib.git",
+                "reference": "a1681e9793040740a405ac5b189275059e2a9863"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/dompdf/php-font-lib/zipball/a1681e9793040740a405ac5b189275059e2a9863",
+                "reference": "a1681e9793040740a405ac5b189275059e2a9863",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*"
+            },
+            "require-dev": {
+                "symfony/phpunit-bridge": "^3 || ^4 || ^5 || ^6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "FontLib\\": "src/FontLib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Ménager",
+                    "email": "fabien.menager@gmail.com"
+                }
+            ],
+            "description": "A library to read, parse, export and make subsets of different types of font files.",
+            "homepage": "https://github.com/PhenX/php-font-lib",
+            "support": {
+                "issues": "https://github.com/dompdf/php-font-lib/issues",
+                "source": "https://github.com/dompdf/php-font-lib/tree/0.5.6"
+            },
+            "time": "2024-01-29T14:45:26+00:00"
+        },
+        {
             "name": "phpoption/phpoption",
             "version": "1.9.3",
             "source": {
@@ -3340,6 +3716,208 @@
                 "source": "https://github.com/ramsey/uuid/tree/4.8.1"
             },
             "time": "2025-06-01T06:28:46+00:00"
+        },
+        {
+            "name": "rindow/rindow-math-matrix",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rindow/rindow-math-matrix.git",
+                "reference": "6d6622b4495d6325e4065430d143d6f4c3b5f0c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rindow/rindow-math-matrix/zipball/6d6622b4495d6325e4065430d143d6f4c3b5f0c4",
+                "reference": "6d6622b4495d6325e4065430d143d6f4c3b5f0c4",
+                "shasum": ""
+            },
+            "require": {
+                "interop-phpobjects/polite-math": "^1.0.7",
+                "php": "^8.1"
+            },
+            "suggest": {
+                "rindow/math-plot": "for OpenCL tunning",
+                "rindow/rindow-math-matrix-matlibffi": "^1.0.4"
+            },
+            "bin": [
+                "bin/rindow-math-matrix"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rindow\\Math\\Matrix\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "The fundamental package for scientific matrix operation",
+            "keywords": [
+                "N-dimension",
+                "math",
+                "matrix",
+                "operation",
+                "rindow"
+            ],
+            "support": {
+                "issues": "https://github.com/rindow/rindow-math-matrix/issues",
+                "source": "https://github.com/rindow/rindow-math-matrix/tree/2.1.2"
+            },
+            "time": "2025-04-13T13:08:33+00:00"
+        },
+        {
+            "name": "rindow/rindow-matlib-ffi",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rindow/rindow-matlib-ffi.git",
+                "reference": "b5eddacc8a0fbc640cfdb90d6a40414ba6c76529"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rindow/rindow-matlib-ffi/zipball/b5eddacc8a0fbc640cfdb90d6a40414ba6c76529",
+                "reference": "b5eddacc8a0fbc640cfdb90d6a40414ba6c76529",
+                "shasum": ""
+            },
+            "require": {
+                "interop-phpobjects/polite-math": "^1.0.7",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "ext-ffi": "*",
+                "rindow/rindow-math-buffer-ffi": "^1.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rindow\\Matlib\\FFI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "The math matrix library for FFI on PHP",
+            "keywords": [
+                "ffi",
+                "math",
+                "matrix",
+                "rindow"
+            ],
+            "support": {
+                "issues": "https://github.com/rindow/rindow-matlib-ffi/issues",
+                "source": "https://github.com/rindow/rindow-matlib-ffi/tree/1.1.3"
+            },
+            "time": "2025-04-13T12:19:57+00:00"
+        },
+        {
+            "name": "rindow/rindow-openblas-ffi",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rindow/rindow-openblas-ffi.git",
+                "reference": "efcddb9b24ac9d2d2f3a7d1092fbd5f66dccbb5e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rindow/rindow-openblas-ffi/zipball/efcddb9b24ac9d2d2f3a7d1092fbd5f66dccbb5e",
+                "reference": "efcddb9b24ac9d2d2f3a7d1092fbd5f66dccbb5e",
+                "shasum": ""
+            },
+            "require": {
+                "interop-phpobjects/polite-math": "^1.0.7",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "ext-ffi": "*",
+                "rindow/rindow-math-buffer-ffi": "^1.0.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rindow\\OpenBLAS\\FFI\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "description": "The Openblas library for FFI on PHP",
+            "keywords": [
+                "ffi",
+                "math",
+                "openblas",
+                "rindow"
+            ],
+            "support": {
+                "issues": "https://github.com/rindow/rindow-openblas-ffi/issues",
+                "source": "https://github.com/rindow/rindow-openblas-ffi/tree/1.0.6"
+            },
+            "time": "2025-04-13T12:42:45+00:00"
+        },
+        {
+            "name": "rokka/imagine-vips",
+            "version": "0.31.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rokka-io/imagine-vips.git",
+                "reference": "6c86dc4a988fbd51081973abd29cbc38989e2e94"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rokka-io/imagine-vips/zipball/6c86dc4a988fbd51081973abd29cbc38989e2e94",
+                "reference": "6c86dc4a988fbd51081973abd29cbc38989e2e94",
+                "shasum": ""
+            },
+            "require": {
+                "imagine/imagine": "^1.0",
+                "jcupitt/vips": "^2.1.0 || ^1.0.3",
+                "phenx/php-font-lib": "^0.5.2",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.8",
+                "phpstan/phpstan": "^1.8",
+                "phpunit/phpunit": "^8 || ^9"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation fallback for saving unsupported file formats",
+                "ext-imagick": "to use the Imagick implementation fallback for saving unsupported file formats"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Imagine": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "rokka",
+                    "email": "rokka@rokka.io",
+                    "homepage": "https://rokka.io"
+                }
+            ],
+            "description": "libvips adapter for imagine",
+            "homepage": "https://github.com/rokka-io/imagine-vips",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing",
+                "libvips",
+                "php-vips",
+                "vips"
+            ],
+            "support": {
+                "issues": "https://github.com/rokka-io/imagine-vips/issues",
+                "source": "https://github.com/rokka-io/imagine-vips/tree/0.31.0"
+            },
+            "time": "2022-10-12T16:32:32+00:00"
         },
         {
             "name": "smalot/pdfparser",

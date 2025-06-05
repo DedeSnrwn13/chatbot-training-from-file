@@ -10,7 +10,9 @@ class Document extends Model
     protected $fillable = [
         'source_file_name',
         'text',
-        'embedding'
+        'embedding',
+        'embedding_provider',
+        'embedding_dimension'
     ];
 
     protected $casts = [
